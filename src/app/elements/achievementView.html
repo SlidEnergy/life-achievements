@@ -1,6 +1,6 @@
 <div class="achievements-thread" *ngFor="let achievement of achievements | async | rootAchievements">
     <div class="root-achievement">
-        <div>{{achievement.name}}</div>
+        <a href="javascript:;"  (click)="achievementText_click(achievement)">{{achievement.name}}</a>
         <div class="percent-bar-container" #achievementPercent="var" [var]="getAchievementPercent(achievement)" >
             <div class="percent-bar" [ngStyle]="{'width': achievementPercent}">{{achievementPercent}}</div>
         </div>

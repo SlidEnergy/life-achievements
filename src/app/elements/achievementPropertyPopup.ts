@@ -18,11 +18,11 @@ export class AchievementPropertyPopupComponent {
     popupVisibleValue: boolean = false;
 
     @Input('visible') 
-    get popupVisible() {
+    get popupVisible(): boolean {
         return this.popupVisibleValue;
     }
     
-    set popupVisible(val) {
+    set popupVisible(val: boolean) {
         this.popupVisibleValue = val;
         this.popupVisibleChange.emit(this.popupVisibleValue);
     }
@@ -33,29 +33,19 @@ export class AchievementPropertyPopupComponent {
 
         let self = this;
 
-        // this.achievements.push({ 
-        //     name: this.achievementName, 
-        //     image: this.image || '',
-        //     needTime: this.needTime || 0, 
-        //     needMoney: this.needMoney || 0, 
-        //     needEnergy: this.needEnergy || 0,
-        //     time: this.time || 0,
-        //     money: 0,
-        //     energy: 0,
-        //     parent: this.parentKey || '',
-        //     completed: this.completed || false
-        // }).then(data=> {
-        //     if(self.parent) {
-        //         let childs = self.parent.childs || [];
-
-        //         childs.push(data.key);
-                
-        //         self.achievements.update(self.parentKey, { childs: childs}).then(data => {
-        //             self.popupVisible = false;
-        //         });
-        //     }
-        //     else
-        //      self.popupVisible = false;
-        // });
+        this.achievements.update(this.achievement.$key, { 
+            name: this.achievement.name,
+            image: this.achievement.image,
+            needTime: this.achievement.needTime || 0, 
+            needMoney: this.achievement.needMoney || 0, 
+            needEnergy: this.achievement.needEnergy || 0,
+            time: this.achievement.time || 0,
+            money: this.achievement.money || 0,
+            energy: this.achievement.energy || 0,
+            parent: this.achievement.parentKey || '',
+            completed: this.achievement.completed || false
+        }).then(data => {
+            self.popupVisible = false;
+        });
     }
 }
