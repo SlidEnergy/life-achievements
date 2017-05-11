@@ -42,7 +42,7 @@ export class AchievementPropertyPopupComponent {
             time: this.achievement.time || 0,
             money: this.achievement.money || 0,
             energy: this.achievement.energy || 0,
-            parent: this.achievement.parentKey || '',
+            parent: this.achievement.parent || '',
             completed: this.achievement.completed || false
         }).then(data => {
             self.popupVisible = false;
