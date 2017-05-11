@@ -73,9 +73,12 @@
     display: none;
 }
 
+.child-achievement .progress-wrapper:hover{
+    cursor: pointer;
+}
+
 .child-achievement .progress-wrapper:hover .achievement-progress-text {
     display:block;
-    cursor: pointer;
 }
 
 .child-achievement figcaption {
