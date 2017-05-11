@@ -75,6 +75,7 @@
 
 .child-achievement .progress-wrapper:hover .achievement-progress-text {
     display:block;
+    cursor: pointer;
 }
 
 .child-achievement figcaption {
