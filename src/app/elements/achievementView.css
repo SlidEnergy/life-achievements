@@ -1,0 +1,84 @@
+.achievements-thread {
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
+
+.root-achievement {
+    vertical-align: middle;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    padding-right: 10px;
+}
+
+.root-achievement .percent-bar-container {
+    width: 100%;
+    color: #000 !important;
+    background-color: #f1f1f1 !important;
+    margin-top: 5px;
+}
+
+.root-achievement .percent-bar {
+    color: #fff !important;
+    background-color: #4CAF50 !important;
+    text-align: center !important;
+}
+
+.child-achievement {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    margin-right: 20px;
+}
+
+.child-achievement:not(:last-child):after {
+    content: '->';
+    position: absolute;
+    top: 30px;
+    right: -17px;
+}
+
+.child-achievement .achievement-completed .achievement-image {
+    opacity: 0.4 !important;
+    /*border: 2px solid green;*/
+}
+
+.child-achievement .progress-wrapper:not(:hover) .achievement-completed:before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    background-image: url(/assets/img/completed.png);
+    background-size: 100%;
+    z-index: 10;
+}
+
+.child-achievement .progress-wrapper:not(:hover) .achievement-image {
+    width: 68px;
+    height: 68px;
+    /*border: 2px solid lightgray;*/
+    background-size: 100%;
+    position: absolute;
+    left: 6px;
+    top: 6px;
+}
+
+.child-achievement .achievement-progress-text {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+.child-achievement .progress-wrapper:hover .achievement-progress-text {
+    display:block;
+}
+
+.child-achievement figcaption {
+    left: 0;
+    right: 0;
+    position: absolute;
+}

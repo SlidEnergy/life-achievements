@@ -1,0 +1,22 @@
+<div class="achievements-thread" *ngFor="let achievement of achievements | async | rootAchievements">
+    <div class="root-achievement">
+        <div>{{achievement.name}}</div>
+        <div class="percent-bar-container" #achievementPercent="var" [var]="getAchievementPercent(achievement)" >
+            <div class="percent-bar" [ngStyle]="{'width': achievementPercent}">{{achievementPercent}}</div>
+        </div>
+    </div>
+    <figure class="child-achievement" *ngFor="let childKey of achievement.childs" #childAchievement="var" [var]="getAchievement(childKey)">
+         <div class="progress-wrapper" [ngClass]="{'achievement-completed': childAchievement.completed}" (click)="achievement_click(childAchievement.varValue)">
+            <div class="achievement-image img-circle" [ngStyle]="{'background-image': getBackgroundImageStyle(childAchievement)}"></div>
+            <div class="achievement-progress-text">{{childAchievement.time}}/{{childAchievement.needTime}}<br>{{getAchievementPercent(childAchievement)}}</div>
+            <round-progress
+                [current]="getCurrentProgress(childAchievement)"
+                [max]="getMaxProgress(childAchievement)"
+                [radius]=40
+                [stroke]=6
+                [color]="childAchievement.completed ? 'rgba(76, 175, 80, 0.4)' : '#4CAF50'">
+            </round-progress>
+        </div>
+        <figcaption><a href="javascript:;" (click)="achievementText_click(childAchievement.varValue)">{{childAchievement.name}}</a></figcaption>
+    </figure>
+</div>
