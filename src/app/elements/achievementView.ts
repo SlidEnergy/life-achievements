@@ -35,7 +35,7 @@ export class AchievementViewComponent {
         if(!achievement || !achievement.image)
             return 'none';
         
-        return "url(/assets/img/" + achievement.image + ")";
+        return "url(assets/img/" + achievement.image + ")";
     }
 
     getCurrentProgress(achievement: any) {
