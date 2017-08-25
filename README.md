@@ -1,3 +1,13 @@
+# Build & Deploy
+
+ng build --prod --base-href "https://slidenergy.github.io/life-achievements/"
+
+angular-cli-ghpages --repo=https://slidenergy:token@github.com/slidenergy/life-achievements.git
+OR
+ngh --repo=https://slidenergy:password@github.com/slidenergy/life-achievements.git
+OR
+ngh
+
 # Lifegame
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
